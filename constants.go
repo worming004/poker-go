@@ -10,6 +10,10 @@ type Card struct {
 	Suit Suit
 }
 
+func (c Card) String() string {
+	return c.Rank.String() + c.Suit.String()
+}
+
 type Deck struct {
 	Cards []Card
 }
