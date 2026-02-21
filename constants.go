@@ -249,7 +249,7 @@ func (h HandType) String() string {
 
 func NewDeck() *Deck {
 	d := &Deck{Cards: make([]Card, 52)}
-	for i := 0; i < 13; i++ {
+	for i := range 13 {
 		d.Cards[i] = Card{UnmarshalRank(i + 2), Hearts}
 		d.Cards[i+13] = Card{UnmarshalRank(i + 2), Clubs}
 		d.Cards[i+26] = Card{UnmarshalRank(i + 2), Diamonds}
@@ -273,7 +273,7 @@ func (d *Deck) DrawCard() Card {
 
 func (d *Deck) DrawCards(n int) []Card {
 	cards := make([]Card, n)
-	for i := 0; i < n; i++ {
+	for i := range n {
 		cards[i] = d.DrawCard()
 	}
 	return cards
