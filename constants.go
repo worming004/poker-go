@@ -11,14 +11,11 @@ type Card struct {
 }
 
 func (c Card) String() string {
-	return c.Rank.String() + c.Suit.String()
+	return c.Rank.String() + " " + c.Suit.String()
 }
 
 func (c Card) StringShort() string {
-	s := c.String()
-
-	runes := []rune(s)
-		return string(runes[:2])
+	return c.Rank.String() + c.Suit.StringShort()
 }
 
 type Deck struct {
@@ -44,6 +41,21 @@ func (s Suit) String() string {
 		return "diamonds"
 	case Spades:
 		return "spades"
+	default:
+		return "unknown"
+	}
+}
+
+func (s Suit) StringShort() string {
+	switch s {
+	case Hearts:
+		return "h"
+	case Clubs:
+		return "c"
+	case Diamonds:
+		return "d"
+	case Spades:
+		return "s"
 	default:
 		return "unknown"
 	}

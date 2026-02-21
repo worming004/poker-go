@@ -12,7 +12,7 @@ func TestCard_StringShort(t *testing.T) {
 		wantString      string
 		wantStringShort string
 	}{
-		{"Print ", poker.Card{Rank: poker.RankQueen, Suit: poker.Spades}, "Qspades", "Qs"},
+		{"Print ", poker.Card{Rank: poker.RankQueen, Suit: poker.Spades}, "Q spades", "Qs"},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
