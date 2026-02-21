@@ -14,6 +14,13 @@ func (c Card) String() string {
 	return c.Rank.String() + c.Suit.String()
 }
 
+func (c Card) StringShort() string {
+	s := c.String()
+
+	runes := []rune(s)
+		return string(runes[:2])
+}
+
 type Deck struct {
 	Cards []Card
 }
