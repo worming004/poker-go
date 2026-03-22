@@ -9,19 +9,17 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
           fetch-depth: 1
-      - uses: actions/setup-go@v4
+      - uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5.6.0
         with:
           go-version-file: 'go.mod'
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
-          node-version: '16'
+          node-version: '20'
       - name: Lint
-        run: |
-          go install honnef.co/go/tools/cmd/staticcheck@latest
-          staticcheck ./...
+        uses: golangci/golangci-lint-action@9fae48acfc02a90574d7c304a1758ef9895495fa # v7.0.1
       - name: Test
         run: |
           cd ui/
