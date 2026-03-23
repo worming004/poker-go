@@ -10,7 +10,7 @@ func EvaluateEquity(players []Player) ([]float64, error) {
 
 	for _, p := range players {
 		for _, c := range p.Hand {
-			deck.removeCard(c)
+			deck.RemoveCard(c)
 		}
 	}
 

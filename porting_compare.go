@@ -8,7 +8,7 @@ import (
 func CompareVSMadeHand(p1 Player) error {
 	deck := NewDeck()
 	for _, c := range p1.Hand {
-		deck.removeCard(c)
+		deck.RemoveCard(c)
 	}
 
 	for _, board := range AllCombinations(deck.Cards, 5) {
@@ -37,12 +37,12 @@ func EvaluateEquityByMadeHandWithCommunity(players []Player, community []Card) (
 
 	for _, p := range players {
 		for _, c := range p.Hand {
-			deck.removeCard(c)
+			deck.RemoveCard(c)
 		}
 	}
 
 	for _, c := range community {
-		deck.removeCard(c)
+		deck.RemoveCard(c)
 	}
 
 	wins := make([]int, len(players))

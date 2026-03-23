@@ -279,7 +279,7 @@ func (d *Deck) DrawCards(n int) []Card {
 	return cards
 }
 
-func (d *Deck) removeCard(card Card) bool {
+func (d *Deck) RemoveCard(card Card) bool {
 	for i, c := range d.Cards {
 		if c.Rank == card.Rank && c.Suit == card.Suit {
 			d.Cards = append(d.Cards[:i], d.Cards[i+1:]...)
